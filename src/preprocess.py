@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
+
 def clean_data(df):
     num_cols = ['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
     cat_cols = ['HomePlanet', 'CryoSleep', 'Destination', 'VIP']
@@ -33,7 +34,3 @@ def clean_data(df):
     df[scale_cols] = scaler.fit_transform(df[scale_cols])
 
     return df
-
-if __name__ == '__main__':
-    df = pd.read_csv('../data/train.csv')
-    print(clean_data(df).head())
