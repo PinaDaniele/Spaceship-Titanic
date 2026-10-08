@@ -1,5 +1,5 @@
-import torch
 import torch.nn as nn
+from torchinfo import summary
 
 class SpacechipTitanicMLP(nn.Module):
     def __init__(self, input_dim):
@@ -20,3 +20,7 @@ class SpacechipTitanicMLP(nn.Module):
 
     def forward(self, x):
         return self.network(x)
+
+if __name__ == '__main__':
+    model = SpacechipTitanicMLP(29)
+    summary(model, input_size=(256,29))

@@ -54,7 +54,7 @@ if __name__ == '__main__':
     criterion = nn.BCELoss().to(device)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-    epochs = 50
+    epochs = 100
     best_val_loss = float('inf')
     train_avg_losses = []
     val_avg_losses = []
